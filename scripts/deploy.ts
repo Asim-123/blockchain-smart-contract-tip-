@@ -1,4 +1,5 @@
 import { ethers } from "hardhat";
+import hre from "hardhat";
 import * as fs from "fs";
 import * as path from "path";
 
@@ -32,6 +33,23 @@ async function main() {
   const filename = network.chainId === 11155111n ? "TipJar.sepolia.json" : "TipJar.json";
   fs.writeFileSync(path.join(outDir, filename), JSON.stringify(deployment, null, 2));
   console.log(`Saved to deployments/${filename}`);
+
+  if (network.chainId === 11155111n && process.env.ETHERSCAN_API_KEY) {
+    console.log("Waiting for Etherscan before verification…");
+    await new Promise((r) => setTimeout(r, 30_000));
+    try {
+      await hre.run("verify:verify", { address, constructorArguments: [] });
+      console.log("Verified on Sepolia Etherscan");
+    } catch (err: unknown) {
+      const msg = err instanceof Error ? err.message : String(err);
+      if (msg.includes("Already Verified")) {
+        console.log("Contract already verified on Etherscan");
+      } else {
+        console.warn("Etherscan verification failed:", msg);
+        console.warn(`Run manually: npx hardhat verify --network sepolia ${address}`);
+      }
+    }
+  }
 }
 
 main().catch((error) => {

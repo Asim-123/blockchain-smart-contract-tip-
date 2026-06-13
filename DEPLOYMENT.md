@@ -146,6 +146,7 @@ git push -u origin main
 | `CONFIRMATIONS` | `3` (safer for testnet) |
 | `PORT` | `3001` |
 | `POLL_INTERVAL_MS` | `15000` |
+| `RELAYER_PRIVATE_KEY` | Wallet with Sepolia ETH (pays gas for gasless tips) |
 
 6. Deploy → copy your URL, e.g. `https://tip-jar-api.onrender.com`
 

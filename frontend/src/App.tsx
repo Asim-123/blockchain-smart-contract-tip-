@@ -29,6 +29,10 @@ function TipJarApp() {
 
   return (
     <>
+      <div className="bg-orb bg-orb-1" aria-hidden="true" />
+      <div className="bg-orb bg-orb-2" aria-hidden="true" />
+      <div className="bg-orb bg-orb-3" aria-hidden="true" />
+
       <header className="app-header">
         <div className="brand">
           <div className="brand-icon">🫙</div>
@@ -41,6 +45,10 @@ function TipJarApp() {
       </header>
 
       <section className="hero">
+        <div className="hero-badge">
+          <span className="live-dot" />
+          Decentralized tipping
+        </div>
         <h2>
           Show appreciation, <em>on-chain</em>
         </h2>
@@ -58,7 +66,15 @@ function TipJarApp() {
       </div>
 
       <footer className="app-footer">
-        Built with Solidity · wagmi · viem &nbsp;·&nbsp; <span>Tip Jar dApp</span>
+        <div className="footer-tech">
+          Built with{" "}
+          <span className="tech-pill">Solidity</span>
+          <span className="tech-pill">wagmi</span>
+          <span className="tech-pill">viem</span>
+        </div>
+        <div className="footer-brand">
+          <span>Tip Jar dApp</span>
+        </div>
       </footer>
     </>
   );

@@ -3,6 +3,7 @@ import express from "express";
 import cors from "cors";
 import { getConfirmedTips } from "./db";
 import { startIndexer } from "./indexer";
+import { relayTip, type RelayTipRequest } from "./relayer";
 
 const PORT = parseInt(process.env.PORT || "3001", 10);
 
@@ -23,6 +24,25 @@ app.get("/tips", (_req, res) => {
     block: t.block_number,
   }));
   res.json(tips);
+});
+
+app.post("/relay-tip", async (req, res) => {
+  const body = req.body as Partial<RelayTipRequest>;
+  const { from, amount, message, deadline, signature } = body;
+
+  if (!from || !amount || message === undefined || !deadline || !signature) {
+    res.status(400).json({ error: "Missing required fields: from, amount, message, deadline, signature" });
+    return;
+  }
+
+  try {
+    const result = await relayTip({ from, amount, message, deadline, signature });
+    res.json(result);
+  } catch (err) {
+    const msg = err instanceof Error ? err.message : "Relay failed";
+    console.error("Relay error:", err);
+    res.status(500).json({ error: msg });
+  }
 });
 
 app.listen(PORT, async () => {
