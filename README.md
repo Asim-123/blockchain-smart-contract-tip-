@@ -4,9 +4,9 @@ Send ETH tips with a message. Everything is stored on-chain and shown in a **rea
 
 ## 🎥 Demo Video
 
-<div style="position: relative; padding-bottom: 56.25%; height: 0;"><iframe src="https://www.loom.com/embed/5c94801136f849dfb8f79a1135537b32" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe></div>
+[![Watch Demo Video](https://cdn.loom.com/sessions/thumbnails/5c94801136f849dfb8f79a1135537b32-with-play.gif)](https://www.loom.com/share/5c94801136f849dfb8f79a1135537b32)
 
-> 📺 [Watch on Loom](https://www.loom.com/share/5c94801136f849dfb8f79a1135537b32) - See the Tip Jar dApp in action with real-time updates!
+**[▶️ Click to watch the full demo](https://www.loom.com/share/5c94801136f849dfb8f79a1135537b32)** - See the Tip Jar dApp in action with real-time updates!
 
 **What’s in this repo**
 
@@ -20,21 +20,13 @@ Send ETH tips with a message. Everything is stored on-chain and shown in a **rea
 
 The project is **live** right now:
 
-| Service | Status | URL |
-|---------|--------|-----|
-| 🔗 Blockchain | ✅ Running | http://127.0.0.1:8545 |
-| 🔧 Backend | ✅ Running | http://localhost:3001 |
-| 💻 Frontend | ✅ Running | **http://localhost:5175** |
+| Service | Status |
+|---------|--------|
+| 🔗 Blockchain | ✅ Running |
+| 🔧 Backend | ✅ Running |
+| 💻 Frontend | ✅ Running |
 
 **Contract**: `0x9fE46736679d2D9a65F0992F2272dE9f3c7fa6e0`
-
-### 🎯 Quick Links
-
-- 🎉 **[RUNNING_NOW.md](./RUNNING_NOW.md)** - **APP IS LIVE! Start here →**
-- 🚀 **[QUICKSTART.md](./QUICKSTART.md)** - Step-by-step usage guide (5 min)
-- 📊 **[PROJECT_STATUS.md](./PROJECT_STATUS.md)** - Current system status & metrics
-- ⚡ **[REALTIME_UPDATES.md](./REALTIME_UPDATES.md)** - WebSocket architecture details
-- 🧪 **[TEST_REALTIME.md](./TEST_REALTIME.md)** - Testing real-time features
 
 ---
 
